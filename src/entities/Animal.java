@@ -1,11 +1,19 @@
 package entities;
 
-public class Animal extends Organism{
-    public Animal(String name){
+import java.util.List;
+
+public class Animal extends Organism {
+    public Animal(String name) {
         super(name);
     }
 
-    public String toString(){
+    @Override
+    public void consume(List<Resource> resources) {
+        System.out.println(name + " потребляет растения и воду");
+        // реализовать логику поиска и потребления растений
+    }
+
+    public String toString() {
         return "Животное: " + name;
     }
 }

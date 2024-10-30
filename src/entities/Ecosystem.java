@@ -20,6 +20,16 @@ public class Ecosystem {
         resources.add(resource);
     }
 
+    public void updateCycle() {
+        System.out.println("\nНачинается новый цикл обновления экосистемы...");
+
+        for (Organism organism : organisms) {
+            organism.consume(resources);
+        }
+
+        displayStatus();
+    }
+
     public void displayStatus() {
         System.out.println("Состояние экосистемы: ");
         for (Organism organism : organisms) {
