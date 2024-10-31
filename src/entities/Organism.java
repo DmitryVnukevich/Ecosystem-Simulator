@@ -1,7 +1,5 @@
 package entities;
 
-import java.util.List;
-
 abstract class Organism {
     protected String name;
 

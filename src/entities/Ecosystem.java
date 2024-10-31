@@ -28,10 +28,14 @@ public class Ecosystem {
         return resources;
     }
 
-    public void updateCycle() {
-        System.out.println("\nНачинается новый цикл обновления экосистемы...");
+    public void updateCycle(int counter) {
+        System.out.printf("""
+                \n**************************************************
+                Начинается новый цикл (%d) обновления экосистемы...
+                **************************************************\n""", counter);
 
-        for (Organism organism : new ArrayList<>(organisms)) {
+        List<Organism> currentOrganisms = new ArrayList<>(organisms);
+        for (Organism organism : currentOrganisms) {
             organism.consume(this);
         }
 
@@ -44,7 +48,7 @@ public class Ecosystem {
     private void replenishResources() {
         System.out.println("Ресурсы восстанавливаются...");
         for (Resource resource : resources) {
-            resource.increaseQuantity(10);
+            resource.increaseQuantity(3);
         }
     }
 

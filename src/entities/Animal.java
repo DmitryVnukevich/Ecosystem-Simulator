@@ -1,23 +1,28 @@
 package entities;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
+import java.util.*;
 
 public class Animal extends Organism {
+    private String species;
     private String targetDiet;
     private List<String> prey;
+    private static Map<String, Integer> speciesCounters = new HashMap<>();
     private int hungerLevel = 3;
 
-    public Animal(String name, String targetDiet) {
+    public Animal(String name, String species ,String targetDiet) {
         super(name);
         this.targetDiet = targetDiet;
+        this.species = species;
         this.prey = new ArrayList<>();
         if (targetDiet.equals("Хищник")) {
             prey.add("Animal");
         } else if (targetDiet.equals("Травоядный")) {
             prey.add("Plant");
         }
+    }
+
+    private String getSpecies(){
+        return species;
     }
 
     @Override
@@ -37,12 +42,14 @@ public class Animal extends Organism {
         }
     }
 
-    //сделать так, чтобы хищники не поедали сами себя и не поедали себе подобных
     private Organism findFood(Ecosystem ecosystem) {
         Iterator<Organism> iterator = ecosystem.getOrganisms().iterator();
         while (iterator.hasNext()) {
             Organism organism = iterator.next();
-            if ((prey.contains("Plant") && organism instanceof Plant) || (prey.contains("Animal") && organism instanceof Animal)) {
+            if (organism != this &&
+                    ((prey.contains("Plant") && organism instanceof Plant) ||
+                            (prey.contains("Animal") && organism instanceof Animal &&
+                                    !((Animal) organism).getSpecies().equals(this.species)))) {
                 iterator.remove();
                 return organism;
             }
@@ -51,9 +58,16 @@ public class Animal extends Organism {
     }
 
     public Organism reproduce() {
-        if (hungerLevel > 1) {
-            System.out.println(name + " размножается.");
-            return new Animal(name + " Jr.", targetDiet);
+        if (hungerLevel > 2) {
+            String baseName = name.split(" ")[0];
+
+            int count = speciesCounters.getOrDefault(baseName, 0) + 1;
+            speciesCounters.put(baseName, count);
+
+            String newName = baseName + " " + count;
+            System.out.println(name + " размножается и создаёт " + newName);
+
+            return new Animal(newName, species, targetDiet);
         }
         return null;
     }
