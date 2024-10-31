@@ -17,6 +17,10 @@ public class Resource {
         return quantity;
     }
 
+    public void increaseQuantity(int amount){
+        quantity += amount;
+    }
+
     public void decreaseQuantity(int amount) {
         quantity = Math.max(quantity - amount, 0);
     }
