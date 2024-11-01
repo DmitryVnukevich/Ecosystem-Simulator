@@ -3,26 +3,19 @@ package entities;
 import java.util.*;
 
 public class Animal extends Organism {
-    private String species;
     private String targetDiet;
     private List<String> prey;
-    private static Map<String, Integer> speciesCounters = new HashMap<>();
     private int hungerLevel = 3;
 
-    public Animal(String name, String species ,String targetDiet) {
+    public Animal(String name, String targetDiet) {
         super(name);
         this.targetDiet = targetDiet;
-        this.species = species;
         this.prey = new ArrayList<>();
         if (targetDiet.equals("Хищник")) {
             prey.add("Animal");
         } else if (targetDiet.equals("Травоядный")) {
             prey.add("Plant");
         }
-    }
-
-    private String getSpecies(){
-        return species;
     }
 
     @Override
@@ -44,12 +37,15 @@ public class Animal extends Organism {
 
     private Organism findFood(Ecosystem ecosystem) {
         Iterator<Organism> iterator = ecosystem.getOrganisms().iterator();
+        String currentSpecies = this.name.split(" ")[0];
+
         while (iterator.hasNext()) {
             Organism organism = iterator.next();
-            if (organism != this &&
+            String foodSpecies = organism.getName().split(" ")[0];
+
+            if (!currentSpecies.equals(foodSpecies) &&
                     ((prey.contains("Plant") && organism instanceof Plant) ||
-                            (prey.contains("Animal") && organism instanceof Animal &&
-                                    !((Animal) organism).getSpecies().equals(this.species)))) {
+                            (prey.contains("Animal") && organism instanceof Animal))) {
                 iterator.remove();
                 return organism;
             }
@@ -57,17 +53,13 @@ public class Animal extends Organism {
         return null;
     }
 
+    @Override
     public Organism reproduce() {
         if (hungerLevel > 2) {
-            String baseName = name.split(" ")[0];
-
-            int count = speciesCounters.getOrDefault(baseName, 0) + 1;
-            speciesCounters.put(baseName, count);
-
-            String newName = baseName + " " + count;
-            System.out.println(name + " размножается и создаёт " + newName);
-
-            return new Animal(newName, species, targetDiet);
+            // Создаём нового потомка с базовым именем
+            Animal offspring = new Animal(name, targetDiet);
+            System.out.println(name + " размножается.");
+            return offspring;
         }
         return null;
     }

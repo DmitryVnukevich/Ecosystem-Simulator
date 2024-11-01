@@ -1,11 +1,14 @@
 package entities;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class Ecosystem {
     private List<Organism> organisms;
     private List<Resource> resources;
+    private Map<String, Integer> organismCounters = new HashMap<>();
 
     public Ecosystem() {
         this.organisms = new ArrayList<>();
@@ -13,6 +16,10 @@ public class Ecosystem {
     }
 
     public void addOrganism(Organism organism) {
+        String baseName = organism.getName().split(" ")[0];
+        int count = organismCounters.getOrDefault(baseName, 0) + 1;
+        organismCounters.put(baseName, count);
+        organism.setName(baseName + " " + count);
         organisms.add(organism);
     }
 
@@ -53,15 +60,15 @@ public class Ecosystem {
     }
 
     private void reproduceOrganism() {
-        List<Organism> newOrganisms = new ArrayList<>();
-        for (Organism organism : organisms) {
+        List<Organism> organismsSnapshot = new ArrayList<>(organisms);
+
+        for (Organism organism : organismsSnapshot) {
             Organism offspring = organism.reproduce();
             if (offspring != null) {
-                newOrganisms.add(offspring);
+                addOrganism(offspring);
                 System.out.println(offspring.getName() + " был добавлен в экосистему.");
             }
         }
-        organisms.addAll(newOrganisms);
     }
 
     public void displayStatus() {

@@ -1,9 +1,7 @@
 package entities;
 
-import java.util.*;
 
 public class Plant extends Organism {
-    private static Map<String, Integer> speciesCounters = new HashMap<>();
     public Plant(String name) {
         super(name);
     }
@@ -38,15 +36,9 @@ public class Plant extends Organism {
 
     @Override
     public Organism reproduce() {
-        String baseName = name.split(" ")[0];
-
-        int count = speciesCounters.getOrDefault(baseName, 0) + 1;
-        speciesCounters.put(baseName, count);
-
-        String newName = baseName + " " + count;
-        System.out.println(name + " размножается и создаёт " + newName);
-
-        return new Plant(newName);
+        Plant offspring = new Plant(name);
+        System.out.println(name + " размножается.");
+        return offspring;
     }
 
     @Override

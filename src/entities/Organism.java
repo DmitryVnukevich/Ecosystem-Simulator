@@ -11,6 +11,10 @@ abstract class Organism {
         return name;
     }
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
     public abstract void consume(Ecosystem ecosystem);
 
     public abstract Organism reproduce();

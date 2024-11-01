@@ -5,16 +5,13 @@ public class Main {
         Ecosystem ecosystem = new Ecosystem();
 
         ecosystem.addOrganism(new Plant("Трава"));
-        ecosystem.addOrganism(new Plant("Трава 1"));
-        ecosystem.addOrganism(new Plant("Трава 2"));
+        ecosystem.addOrganism(new Plant("Трава"));
         ecosystem.addOrganism(new Plant("Куст"));
-        ecosystem.addOrganism(new Plant("Куст 1"));
-        ecosystem.addOrganism(new Plant("Куст 2"));
+        ecosystem.addOrganism(new Plant("Куст"));
 
-        ecosystem.addOrganism(new Animal("Заяц", "Rabbit" , "Травоядный"));
-        ecosystem.addOrganism(new Animal("Заяц 1", "Rabbit" , "Травоядный"));
-        ecosystem.addOrganism(new Animal("Заяц 2", "Rabbit" , "Травоядный"));
-        ecosystem.addOrganism(new Animal("Волк", "Wolf" , "Хищник"));
+        ecosystem.addOrganism(new Animal("Заяц", "Травоядный"));
+        ecosystem.addOrganism(new Animal("Заяц", "Травоядный"));
+        ecosystem.addOrganism(new Animal("Волк", "Хищник"));
 
         ecosystem.addResource(new Resource("Солнечный свет", 100));
         ecosystem.addResource(new Resource("Вода", 100));
