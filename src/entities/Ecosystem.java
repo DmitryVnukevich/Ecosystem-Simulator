@@ -5,16 +5,37 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import java.io.IOException;
+import java.util.logging.FileHandler;
+import java.util.logging.Logger;
+import java.util.logging.SimpleFormatter;
+
 public class Ecosystem {
     private int sunlightRecovery;
     private int waterRecovery;
     private List<Organism> organisms;
     private List<Resource> resources;
     private Map<String, Integer> organismCounters = new HashMap<>();
+    private static final Logger logger = Logger.getLogger(Ecosystem.class.getName());
+
+    static {
+        try {
+            FileHandler fileHandler = new FileHandler("ecosystem.log", true);
+            fileHandler.setFormatter(new SimpleFormatter());
+            logger.addHandler(fileHandler);
+            logger.setUseParentHandlers(false);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
     public Ecosystem() {
         this.organisms = new ArrayList<>();
         this.resources = new ArrayList<>();
+    }
+
+    public static Logger getLogger() {
+        return logger;
     }
 
     public List<Organism> getOrganisms() {
@@ -35,11 +56,13 @@ public class Ecosystem {
     public void addPlant(String name, int waterConsumption, int sunlightConsumption) {
         Plant plant = new Plant(name, waterConsumption, sunlightConsumption);
         organisms.add(addOrganism(plant));
+        logger.info("Добавлено растение: " + plant.getName() + ", потребление воды: " + waterConsumption + ", солнечного света: " + sunlightConsumption);
     }
 
     public void addAnimal(String name, boolean isHerbivore) {
         Animal animal = new Animal(name, isHerbivore ? "Травоядное" : "Хищник");
         organisms.add(addOrganism(animal));
+        logger.info("Добавлено животное: " + animal.getName() + ", тип: " + (isHerbivore ? "Травоядное" : "Хищник"));
     }
 
     public Organism addOrganism(Organism organism) {
@@ -72,6 +95,7 @@ public class Ecosystem {
                     \n**************************************************
                     Начинается новый цикл (%d) обновления экосистемы...
                     **************************************************\n""", i);
+            logger.info("Начинается новый цикл (" + i + ") обновления экосистемы...");
             updateCycle();
         }
     }
@@ -86,6 +110,7 @@ public class Ecosystem {
         reproduceOrganism();
 
         displayStatus();
+        logEcosystemState();
     }
 
     private void replenishResources() {
@@ -118,6 +143,17 @@ public class Ecosystem {
         }
         for (Resource resource : resources) {
             System.out.println(resource);
+        }
+
+    }
+
+    public void logEcosystemState() {
+        logger.info("Состояние экосистемы: ");
+        for (Organism organism : organisms) {
+            logger.info("Организм: " + organism.getName() + ", тип: " + organism.getClass().getSimpleName());
+        }
+        for (Resource resource : resources) {
+            logger.info("Ресурсы: " + resource.getResourceName() + " = " + resource.getQuantity() + ", " + resource.getResourceName() + " = " + resource.getQuantity());
         }
     }
 }
