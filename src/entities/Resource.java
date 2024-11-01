@@ -17,7 +17,7 @@ public class Resource {
         return quantity;
     }
 
-    public void increaseQuantity(int amount){
+    public void increaseQuantity(int amount) {
         quantity += amount;
     }
 

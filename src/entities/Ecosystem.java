@@ -6,6 +6,8 @@ import java.util.List;
 import java.util.Map;
 
 public class Ecosystem {
+    private int sunlightRecovery;
+    private int waterRecovery;
     private List<Organism> organisms;
     private List<Resource> resources;
     private Map<String, Integer> organismCounters = new HashMap<>();
@@ -13,18 +15,6 @@ public class Ecosystem {
     public Ecosystem() {
         this.organisms = new ArrayList<>();
         this.resources = new ArrayList<>();
-    }
-
-    public void addOrganism(Organism organism) {
-        String baseName = organism.getName().split(" ")[0];
-        int count = organismCounters.getOrDefault(baseName, 0) + 1;
-        organismCounters.put(baseName, count);
-        organism.setName(baseName + " " + count);
-        organisms.add(organism);
-    }
-
-    public void addResource(Resource resource) {
-        resources.add(resource);
     }
 
     public List<Organism> getOrganisms() {
@@ -35,12 +25,58 @@ public class Ecosystem {
         return resources;
     }
 
-    public void updateCycle(int counter) {
-        System.out.printf("""
-                \n**************************************************
-                Начинается новый цикл (%d) обновления экосистемы...
-                **************************************************\n""", counter);
+    public void addResources(int initialWater, int initialSunlight, int waterRecovery, int sunlightRecovery) {
+        this.resources.add(new Resource("Вода", initialWater));
+        this.resources.add(new Resource("Солнечный свет", initialSunlight));
+        this.waterRecovery = waterRecovery;
+        this.sunlightRecovery = sunlightRecovery;
+    }
 
+    public void addPlant(String name, int waterConsumption, int sunlightConsumption) {
+        Plant plant = new Plant(name, waterConsumption, sunlightConsumption);
+        organisms.add(addOrganism(plant));
+    }
+
+    public void addAnimal(String name, boolean isHerbivore) {
+        Animal animal = new Animal(name, isHerbivore ? "Травоядное" : "Хищник");
+        organisms.add(addOrganism(animal));
+    }
+
+    public Organism addOrganism(Organism organism) {
+        String baseName = organism.getName().split(" ")[0];
+        int count = organismCounters.getOrDefault(baseName, 0) + 1;
+        organismCounters.put(baseName, count);
+
+        organism.setName(baseName + " " + count);
+        return organism;
+    }
+
+    public void showConditions() {
+        System.out.println("Организмы в экосистеме:");
+        for (Organism organism : organisms) {
+            System.out.println(organism);
+        }
+        System.out.println("Ресурсы в экосистеме:");
+        for (Resource resource : resources) {
+            System.out.println(resource);
+        }
+    }
+
+    public boolean isReadyForSimulation() {
+        return !resources.isEmpty() && !organisms.isEmpty();
+    }
+
+    public void run(int numCycles) {
+        for (int i = 1; i <= numCycles; i++) {
+            System.out.printf("""
+                    \n**************************************************
+                    Начинается новый цикл (%d) обновления экосистемы...
+                    **************************************************\n""", i);
+            updateCycle();
+        }
+    }
+
+    public void updateCycle() {
         List<Organism> currentOrganisms = new ArrayList<>(organisms);
         for (Organism organism : currentOrganisms) {
             organism.consume(this);
@@ -55,7 +91,11 @@ public class Ecosystem {
     private void replenishResources() {
         System.out.println("Ресурсы восстанавливаются...");
         for (Resource resource : resources) {
-            resource.increaseQuantity(3);
+            if (resource.getResourceName().equals("Вода")) {
+                resource.increaseQuantity(waterRecovery);
+            } else if (resource.getResourceName().equals("Солнечный свет")) {
+                resource.increaseQuantity(sunlightRecovery);
+            }
         }
     }
 

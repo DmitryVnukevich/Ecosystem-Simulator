@@ -1,25 +1,29 @@
 package entities;
 
-
 public class Plant extends Organism {
-    public Plant(String name) {
+    private int waterConsumption;
+    private int sunlightConsumption;
+
+    public Plant(String name, int waterConsumption, int sunlightConsumption) {
         super(name);
+        this.waterConsumption = waterConsumption;
+        this.sunlightConsumption = sunlightConsumption;
     }
 
     @Override
     public void consume(Ecosystem ecosystem) {
         Resource waterResource = findResource("Вода", ecosystem);
-        if (waterResource != null && waterResource.getQuantity() >= 5) {
-            waterResource.decreaseQuantity(5);
-            System.out.println(name + " потребил 5 единиц воды.");
+        if (waterResource != null && waterResource.getQuantity() >= waterConsumption) {
+            waterResource.decreaseQuantity(waterConsumption);
+            System.out.printf(name + " потребил %d единиц воды.", waterConsumption);
         } else {
             System.out.println(name + " не хватает воды.");
         }
 
         Resource sunlightResource = findResource("Солнечный свет", ecosystem);
-        if (sunlightResource != null && sunlightResource.getQuantity() >= 3) {
-            sunlightResource.decreaseQuantity(3);
-            System.out.println(name + " потребил 3 единицы солнечного света.");
+        if (sunlightResource != null && sunlightResource.getQuantity() >= sunlightConsumption) {
+            sunlightResource.decreaseQuantity(sunlightConsumption);
+            System.out.printf("\n" + name + " потребил %d единицы солнечного света.", sunlightConsumption);
         } else {
             System.out.println(name + " не хватает солнечного света.");
         }
@@ -36,7 +40,7 @@ public class Plant extends Organism {
 
     @Override
     public Organism reproduce() {
-        Plant offspring = new Plant(name);
+        Plant offspring = new Plant(name, waterConsumption, sunlightConsumption);
         System.out.println(name + " размножается.");
         return offspring;
     }

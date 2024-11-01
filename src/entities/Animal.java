@@ -13,7 +13,7 @@ public class Animal extends Organism {
         this.prey = new ArrayList<>();
         if (targetDiet.equals("Хищник")) {
             prey.add("Animal");
-        } else if (targetDiet.equals("Травоядный")) {
+        } else if (targetDiet.equals("Травоядное")) {
             prey.add("Plant");
         }
     }
@@ -56,7 +56,6 @@ public class Animal extends Organism {
     @Override
     public Organism reproduce() {
         if (hungerLevel > 2) {
-            // Создаём нового потомка с базовым именем
             Animal offspring = new Animal(name, targetDiet);
             System.out.println(name + " размножается.");
             return offspring;

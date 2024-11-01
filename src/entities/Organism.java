@@ -18,5 +18,6 @@ abstract class Organism {
     public abstract void consume(Ecosystem ecosystem);
 
     public abstract Organism reproduce();
+
     public abstract String toString();
 }
