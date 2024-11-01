@@ -1,0 +1,268 @@
+нояб. 01, 2024 5:15:20 PM entities.Ecosystem addPlant
+INFO: Добавлено растение: grass 1, потребление воды: 1, солнечного света: 1
+нояб. 01, 2024 5:15:28 PM entities.Ecosystem addPlant
+INFO: Добавлено растение: grass 2, потребление воды: 1, солнечного света: 1
+нояб. 01, 2024 5:15:41 PM entities.Ecosystem addPlant
+INFO: Добавлено растение: bush 1, потребление воды: 2, солнечного света: 2
+нояб. 01, 2024 5:15:54 PM entities.Ecosystem addAnimal
+INFO: Добавлено животное: rabbit 1, тип: Травоядное
+нояб. 01, 2024 5:16:01 PM entities.Ecosystem addAnimal
+INFO: Добавлено животное: rabbit 2, тип: Травоядное
+нояб. 01, 2024 5:16:05 PM entities.Ecosystem addAnimal
+INFO: Добавлено животное: wolf 1, тип: Хищник
+нояб. 01, 2024 5:16:43 PM entities.Ecosystem addPlant
+INFO: Добавлено растение: bush 2, потребление воды: 2, солнечного света: 2
+нояб. 01, 2024 5:17:06 PM entities.Ecosystem logEcosystemState
+INFO: Состояние экосистемы: 
+нояб. 01, 2024 5:17:06 PM entities.Ecosystem logEcosystemState
+INFO: Организм: bush 1, тип: Plant
+нояб. 01, 2024 5:17:06 PM entities.Ecosystem logEcosystemState
+INFO: Организм: rabbit 2, тип: Animal
+нояб. 01, 2024 5:17:06 PM entities.Ecosystem logEcosystemState
+INFO: Организм: wolf 1, тип: Animal
+нояб. 01, 2024 5:17:06 PM entities.Ecosystem logEcosystemState
+INFO: Организм: bush 2, тип: Plant
+нояб. 01, 2024 5:17:06 PM entities.Ecosystem logEcosystemState
+INFO: Ресурсы: Вода = 96, Вода = 96
+нояб. 01, 2024 5:17:06 PM entities.Ecosystem logEcosystemState
+INFO: Ресурсы: Солнечный свет = 96, Солнечный свет = 96
+нояб. 01, 2024 5:17:06 PM entities.Ecosystem logEcosystemState
+INFO: Состояние экосистемы: 
+нояб. 01, 2024 5:17:06 PM entities.Ecosystem logEcosystemState
+INFO: Организм: wolf 1, тип: Animal
+нояб. 01, 2024 5:17:06 PM entities.Ecosystem logEcosystemState
+INFO: Организм: bush 2, тип: Plant
+нояб. 01, 2024 5:17:06 PM entities.Ecosystem logEcosystemState
+INFO: Ресурсы: Вода = 94, Вода = 94
+нояб. 01, 2024 5:17:06 PM entities.Ecosystem logEcosystemState
+INFO: Ресурсы: Солнечный свет = 94, Солнечный свет = 94
+нояб. 01, 2024 5:17:06 PM entities.Ecosystem logEcosystemState
+INFO: Состояние экосистемы: 
+нояб. 01, 2024 5:17:06 PM entities.Ecosystem logEcosystemState
+INFO: Организм: wolf 1, тип: Animal
+нояб. 01, 2024 5:17:06 PM entities.Ecosystem logEcosystemState
+INFO: Организм: bush 2, тип: Plant
+нояб. 01, 2024 5:17:06 PM entities.Ecosystem logEcosystemState
+INFO: Ресурсы: Вода = 94, Вода = 94
+нояб. 01, 2024 5:17:06 PM entities.Ecosystem logEcosystemState
+INFO: Ресурсы: Солнечный свет = 94, Солнечный свет = 94
+нояб. 01, 2024 5:36:40 PM entities.Ecosystem addPlant
+INFO: Добавлено растение: bush 1, потребление воды: 2, солнечного света: 2
+нояб. 01, 2024 5:36:47 PM entities.Ecosystem addPlant
+INFO: Добавлено растение: grass 1, потребление воды: 1, солнечного света: 1
+нояб. 01, 2024 5:36:53 PM entities.Ecosystem addPlant
+INFO: Добавлено растение: grass 2, потребление воды: 1, солнечного света: 1
+нояб. 01, 2024 5:37:00 PM entities.Ecosystem addAnimal
+INFO: Добавлено животное: rabbit 1, тип: Травоядное
+нояб. 01, 2024 5:37:06 PM entities.Ecosystem addAnimal
+INFO: Добавлено животное: rabbit 2, тип: Травоядное
+нояб. 01, 2024 5:37:12 PM entities.Ecosystem addAnimal
+INFO: Добавлено животное: wolf 1, тип: Хищник
+нояб. 01, 2024 5:37:22 PM entities.Ecosystem run
+INFO: Начинается новый цикл (1) обновления экосистемы...
+нояб. 01, 2024 5:37:22 PM entities.Plant consume
+INFO: bush 1 потребил 2 единиц воды.
+нояб. 01, 2024 5:37:22 PM entities.Plant consume
+INFO: bush 1 потребил 2 единицы солнечного света.
+нояб. 01, 2024 5:37:22 PM entities.Plant consume
+INFO: grass 1 потребил 1 единиц воды.
+нояб. 01, 2024 5:37:22 PM entities.Plant consume
+INFO: grass 1 потребил 1 единицы солнечного света.
+нояб. 01, 2024 5:37:22 PM entities.Plant consume
+INFO: grass 2 потребил 1 единиц воды.
+нояб. 01, 2024 5:37:22 PM entities.Plant consume
+INFO: grass 2 потребил 1 единицы солнечного света.
+нояб. 01, 2024 5:37:22 PM entities.Animal consume
+INFO: rabbit 1 съел bush 1
+нояб. 01, 2024 5:37:22 PM entities.Animal consume
+INFO: rabbit 2 съел grass 1
+нояб. 01, 2024 5:37:22 PM entities.Animal consume
+INFO: wolf 1 съел rabbit 1
+нояб. 01, 2024 5:37:22 PM entities.Animal reproduce
+INFO: rabbit 2 не нашёл пищи и голодает.
+нояб. 01, 2024 5:37:22 PM entities.Animal reproduce
+INFO: wolf 1 не нашёл пищи и голодает.
+нояб. 01, 2024 5:37:22 PM entities.Ecosystem logEcosystemState
+INFO: Состояние экосистемы: 
+нояб. 01, 2024 5:37:22 PM entities.Ecosystem logEcosystemState
+INFO: Организм: grass 2, тип: Plant
+нояб. 01, 2024 5:37:22 PM entities.Ecosystem logEcosystemState
+INFO: Организм: rabbit 2, тип: Animal
+нояб. 01, 2024 5:37:22 PM entities.Ecosystem logEcosystemState
+INFO: Организм: wolf 1, тип: Animal
+нояб. 01, 2024 5:37:22 PM entities.Ecosystem logEcosystemState
+INFO: Ресурсы: Вода = 98, Вода = 98
+нояб. 01, 2024 5:37:22 PM entities.Ecosystem logEcosystemState
+INFO: Ресурсы: Солнечный свет = 98, Солнечный свет = 98
+нояб. 01, 2024 5:37:22 PM entities.Ecosystem run
+INFO: Начинается новый цикл (2) обновления экосистемы...
+нояб. 01, 2024 5:37:22 PM entities.Plant consume
+INFO: grass 2 потребил 1 единиц воды.
+нояб. 01, 2024 5:37:22 PM entities.Plant consume
+INFO: grass 2 потребил 1 единицы солнечного света.
+нояб. 01, 2024 5:37:22 PM entities.Animal consume
+INFO: rabbit 2 съел grass 2
+нояб. 01, 2024 5:37:22 PM entities.Animal consume
+INFO: wolf 1 съел rabbit 2
+нояб. 01, 2024 5:37:22 PM entities.Animal reproduce
+INFO: wolf 1 не нашёл пищи и голодает.
+нояб. 01, 2024 5:37:22 PM entities.Ecosystem logEcosystemState
+INFO: Состояние экосистемы: 
+нояб. 01, 2024 5:37:22 PM entities.Ecosystem logEcosystemState
+INFO: Организм: wolf 1, тип: Animal
+нояб. 01, 2024 5:37:22 PM entities.Ecosystem logEcosystemState
+INFO: Ресурсы: Вода = 99, Вода = 99
+нояб. 01, 2024 5:37:22 PM entities.Ecosystem logEcosystemState
+INFO: Ресурсы: Солнечный свет = 99, Солнечный свет = 99
+нояб. 01, 2024 5:37:22 PM entities.Ecosystem run
+INFO: Начинается новый цикл (3) обновления экосистемы...
+нояб. 01, 2024 5:37:22 PM entities.Animal consume
+INFO: wolf 1 не нашёл пищи и голодает.
+нояб. 01, 2024 5:37:22 PM entities.Ecosystem logEcosystemState
+INFO: Состояние экосистемы: 
+нояб. 01, 2024 5:37:22 PM entities.Ecosystem logEcosystemState
+INFO: Организм: wolf 1, тип: Animal
+нояб. 01, 2024 5:37:22 PM entities.Ecosystem logEcosystemState
+INFO: Ресурсы: Вода = 101, Вода = 101
+нояб. 01, 2024 5:37:22 PM entities.Ecosystem logEcosystemState
+INFO: Ресурсы: Солнечный свет = 101, Солнечный свет = 101
+нояб. 01, 2024 5:39:44 PM entities.Ecosystem run
+INFO: Начинается новый цикл (1) обновления экосистемы...
+нояб. 01, 2024 5:39:44 PM entities.Animal consume
+INFO: wolf 1 не нашёл пищи и голодает.
+нояб. 01, 2024 5:39:44 PM entities.Ecosystem logEcosystemState
+INFO: Состояние экосистемы: 
+нояб. 01, 2024 5:39:44 PM entities.Ecosystem logEcosystemState
+INFO: Организм: wolf 1, тип: Animal
+нояб. 01, 2024 5:39:44 PM entities.Ecosystem logEcosystemState
+INFO: Ресурсы: Вода = 103, Вода = 103
+нояб. 01, 2024 5:39:44 PM entities.Ecosystem logEcosystemState
+INFO: Ресурсы: Солнечный свет = 103, Солнечный свет = 103
+нояб. 01, 2024 5:39:44 PM entities.Ecosystem run
+INFO: Начинается новый цикл (2) обновления экосистемы...
+нояб. 01, 2024 5:39:44 PM entities.Animal consume
+INFO: wolf 1 умер от голода.
+нояб. 01, 2024 5:39:44 PM entities.Ecosystem logEcosystemState
+INFO: Состояние экосистемы: 
+нояб. 01, 2024 5:39:44 PM entities.Ecosystem logEcosystemState
+INFO: Ресурсы: Вода = 105, Вода = 105
+нояб. 01, 2024 5:39:44 PM entities.Ecosystem logEcosystemState
+INFO: Ресурсы: Солнечный свет = 105, Солнечный свет = 105
+нояб. 01, 2024 5:39:44 PM entities.Ecosystem run
+INFO: Начинается новый цикл (3) обновления экосистемы...
+нояб. 01, 2024 5:39:44 PM entities.Ecosystem logEcosystemState
+INFO: Состояние экосистемы: 
+нояб. 01, 2024 5:39:44 PM entities.Ecosystem logEcosystemState
+INFO: Ресурсы: Вода = 107, Вода = 107
+нояб. 01, 2024 5:39:44 PM entities.Ecosystem logEcosystemState
+INFO: Ресурсы: Солнечный свет = 107, Солнечный свет = 107
+нояб. 01, 2024 5:45:14 PM entities.Ecosystem addPlant
+INFO: Добавлено растение: bush 1, потребление воды: 3, солнечного света: 3
+нояб. 01, 2024 5:45:21 PM entities.Ecosystem addPlant
+INFO: Добавлено растение: grass 1, потребление воды: 1, солнечного света: 1
+нояб. 01, 2024 5:45:27 PM entities.Ecosystem addPlant
+INFO: Добавлено растение: grass 2, потребление воды: 1, солнечного света: 1
+нояб. 01, 2024 5:45:44 PM entities.Ecosystem addAnimal
+INFO: Добавлено животное: rabbit 1, тип: Травоядное
+нояб. 01, 2024 5:45:49 PM entities.Ecosystem addAnimal
+INFO: Добавлено животное: rabbit 2, тип: Травоядное
+нояб. 01, 2024 5:45:54 PM entities.Ecosystem addAnimal
+INFO: Добавлено животное: wolf 1, тип: Хищник
+нояб. 01, 2024 5:46:07 PM entities.Ecosystem run
+INFO: Начинается новый цикл (1) обновления экосистемы...
+нояб. 01, 2024 5:46:07 PM entities.Plant consume
+INFO: bush 1 потребил 3 единиц воды.
+нояб. 01, 2024 5:46:07 PM entities.Plant consume
+INFO: bush 1 потребил 3 единицы солнечного света.
+нояб. 01, 2024 5:46:07 PM entities.Plant consume
+INFO: grass 1 потребил 1 единиц воды.
+нояб. 01, 2024 5:46:07 PM entities.Plant consume
+INFO: grass 1 потребил 1 единицы солнечного света.
+нояб. 01, 2024 5:46:07 PM entities.Plant consume
+INFO: grass 2 потребил 1 единиц воды.
+нояб. 01, 2024 5:46:07 PM entities.Plant consume
+INFO: grass 2 потребил 1 единицы солнечного света.
+нояб. 01, 2024 5:46:07 PM entities.Animal consume
+INFO: rabbit 1 съел bush 1
+нояб. 01, 2024 5:46:07 PM entities.Animal consume
+INFO: rabbit 2 съел grass 1
+нояб. 01, 2024 5:46:07 PM entities.Animal consume
+INFO: wolf 1 съел rabbit 1
+нояб. 01, 2024 5:46:07 PM entities.Animal reproduce
+INFO: rabbit 2 не нашёл пищи и голодает.
+нояб. 01, 2024 5:46:07 PM entities.Animal reproduce
+INFO: wolf 1 не нашёл пищи и голодает.
+нояб. 01, 2024 5:46:07 PM entities.Ecosystem logEcosystemState
+INFO: Состояние экосистемы: 
+нояб. 01, 2024 5:46:07 PM entities.Ecosystem logEcosystemState
+INFO: Организм: grass 2, тип: Plant
+нояб. 01, 2024 5:46:07 PM entities.Ecosystem logEcosystemState
+INFO: Организм: rabbit 2, тип: Animal
+нояб. 01, 2024 5:46:07 PM entities.Ecosystem logEcosystemState
+INFO: Организм: wolf 1, тип: Animal
+нояб. 01, 2024 5:46:07 PM entities.Ecosystem logEcosystemState
+INFO: Ресурсы: Вода = 50, Вода = 50
+нояб. 01, 2024 5:46:07 PM entities.Ecosystem logEcosystemState
+INFO: Ресурсы: Солнечный свет = 50, Солнечный свет = 50
+нояб. 01, 2024 5:46:07 PM entities.Ecosystem run
+INFO: Начинается новый цикл (2) обновления экосистемы...
+нояб. 01, 2024 5:46:07 PM entities.Plant consume
+INFO: grass 2 потребил 1 единиц воды.
+нояб. 01, 2024 5:46:07 PM entities.Plant consume
+INFO: grass 2 потребил 1 единицы солнечного света.
+нояб. 01, 2024 5:46:07 PM entities.Animal consume
+INFO: rabbit 2 съел grass 2
+нояб. 01, 2024 5:46:07 PM entities.Animal consume
+INFO: wolf 1 съел rabbit 2
+нояб. 01, 2024 5:46:07 PM entities.Animal reproduce
+INFO: wolf 1 не нашёл пищи и голодает.
+нояб. 01, 2024 5:46:07 PM entities.Ecosystem logEcosystemState
+INFO: Состояние экосистемы: 
+нояб. 01, 2024 5:46:07 PM entities.Ecosystem logEcosystemState
+INFO: Организм: wolf 1, тип: Animal
+нояб. 01, 2024 5:46:07 PM entities.Ecosystem logEcosystemState
+INFO: Ресурсы: Вода = 54, Вода = 54
+нояб. 01, 2024 5:46:07 PM entities.Ecosystem logEcosystemState
+INFO: Ресурсы: Солнечный свет = 54, Солнечный свет = 54
+нояб. 01, 2024 5:46:07 PM entities.Ecosystem run
+INFO: Начинается новый цикл (3) обновления экосистемы...
+нояб. 01, 2024 5:46:07 PM entities.Animal consume
+INFO: wolf 1 не нашёл пищи и голодает.
+нояб. 01, 2024 5:46:07 PM entities.Ecosystem logEcosystemState
+INFO: Состояние экосистемы: 
+нояб. 01, 2024 5:46:07 PM entities.Ecosystem logEcosystemState
+INFO: Организм: wolf 1, тип: Animal
+нояб. 01, 2024 5:46:07 PM entities.Ecosystem logEcosystemState
+INFO: Ресурсы: Вода = 59, Вода = 59
+нояб. 01, 2024 5:46:07 PM entities.Ecosystem logEcosystemState
+INFO: Ресурсы: Солнечный свет = 59, Солнечный свет = 59
+нояб. 01, 2024 5:47:00 PM entities.Ecosystem run
+INFO: Начинается новый цикл (1) обновления экосистемы...
+нояб. 01, 2024 5:47:00 PM entities.Animal consume
+INFO: wolf 1 не нашёл пищи и голодает.
+нояб. 01, 2024 5:47:00 PM entities.Ecosystem logEcosystemState
+INFO: Состояние экосистемы: 
+нояб. 01, 2024 5:47:00 PM entities.Ecosystem logEcosystemState
+INFO: Организм: wolf 1, тип: Animal
+нояб. 01, 2024 5:47:00 PM entities.Ecosystem logEcosystemState
+INFO: Ресурсы: Вода = 64, Вода = 64
+нояб. 01, 2024 5:47:00 PM entities.Ecosystem logEcosystemState
+INFO: Ресурсы: Солнечный свет = 64, Солнечный свет = 64
+нояб. 01, 2024 5:47:00 PM entities.Ecosystem run
+INFO: Начинается новый цикл (2) обновления экосистемы...
+нояб. 01, 2024 5:47:00 PM entities.Animal consume
+INFO: wolf 1 умер от голода.
+нояб. 01, 2024 5:47:00 PM entities.Ecosystem logEcosystemState
+INFO: Состояние экосистемы: 
+нояб. 01, 2024 5:47:00 PM entities.Ecosystem logEcosystemState
+INFO: Ресурсы: Вода = 69, Вода = 69
+нояб. 01, 2024 5:47:00 PM entities.Ecosystem logEcosystemState
+INFO: Ресурсы: Солнечный свет = 69, Солнечный свет = 69
+нояб. 01, 2024 5:47:00 PM entities.Ecosystem run
+INFO: Начинается новый цикл (3) обновления экосистемы...
+нояб. 01, 2024 5:47:00 PM entities.Ecosystem logEcosystemState
+INFO: Состояние экосистемы: 
+нояб. 01, 2024 5:47:00 PM entities.Ecosystem logEcosystemState
+INFO: Ресурсы: Вода = 74, Вода = 74
+нояб. 01, 2024 5:47:00 PM entities.Ecosystem logEcosystemState
+INFO: Ресурсы: Солнечный свет = 74, Солнечный свет = 74
